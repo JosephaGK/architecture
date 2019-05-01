@@ -6,6 +6,9 @@ package sort;
 public class SelectionSort {
 	public static void main(String[] args) {
 		int[] arr = {5,3,6,8,1,7,9,4,2};
+		sort(arr);
+	}
+	static void sort(int[] arr){
 		//1.遍历一次选出最小值的位置，把最小值与第一个值互换位置
 		/*
 		int minPos = 0;
@@ -40,8 +43,8 @@ public class SelectionSort {
 		*/
 
 		//4.完成后精细化处理,提取代码，增加每次遍历的检验
-		System.out.print("第0次遍历后数组情况：");
-		print(arr);
+//		System.out.print("第0次遍历后数组情况：");
+//		print(arr);
 		for (int j = 0; j < arr.length-1; j++) {
 			int minPos = j;
 			for (int i = j+1; i < arr.length; i++) {
@@ -49,9 +52,9 @@ public class SelectionSort {
 					minPos = i;
 				}
 			}
-			System.out.print("第" + (j + 1) + "次遍历后数组情况：");
+//			System.out.print("第" + (j + 1) + "次遍历后数组情况：");
 			swap(arr, j, minPos);
-			print(arr);
+//			print(arr);
 		}
 	}
 
