@@ -5,9 +5,14 @@ import java.util.Random;
 
 public class DataChecker {
 	public static void main(String[] args) {
-		for (int i = 0; i < 10; i++) {
-			check();
+		boolean pass = true;
+		for (int i = 0; i < 4; i++) {
+			boolean check = check();
+			if(!check){
+				break;
+			}
 		}
+		System.out.println(pass);
 	}
 	static int[] generateRandomArray(){
 		Random random = new Random();
@@ -17,13 +22,17 @@ public class DataChecker {
 		}
 		return arr;
 	}
-	static void check(){
+	static boolean check(){
 		int[] arr = generateRandomArray();
 		int[] arr2 = new int[arr.length];
 		System.arraycopy(arr,0,arr2,0,arr.length);
 
 		Arrays.sort(arr);
-		SelectionSort.sort(arr2);
+//		SelectionSort.sort(arr2);
+//		BubbleSort.sort(arr2);
+//		InsertionSort.sort(arr2);
+		ShellSort.sort(arr2);
+
 
 		boolean same = true;
 		for (int i = 0; i < arr2.length; i++) {
@@ -32,6 +41,6 @@ public class DataChecker {
 				break;
 			}
 		}
-		System.out.println(same);
+		return same;
 	}
 }
