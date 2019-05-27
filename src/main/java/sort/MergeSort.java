@@ -30,7 +30,7 @@ public class MergeSort {
 		}
 		while (i <= mid) {
 			result[k++] = arr[i++];
-		}
+	}
 		while (j < arr.length) {
 			result[k++] = arr[j++];
 		}
